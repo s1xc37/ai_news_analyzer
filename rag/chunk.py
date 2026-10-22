@@ -53,7 +53,7 @@ def load_docs(docs_dir: Path):
 # ---------- разбор markdown на блоки ----------
 
 def clean(text: str) -> str:
-    text = text.replace("**", "").replace("__", "")  # жирный шрифт эмбеддингам не нужен
+    text = text.replace("**", "").replace("__", "").replace("\\*", "")  # жирный шрифт эмбеддингам не нужен
     return re.sub(r"\s+", " ", text).strip()
 
 
