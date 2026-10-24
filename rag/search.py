@@ -55,7 +55,7 @@ class Searcher:
             )
 
         # Модель грузим ОДИН раз — это самое долгое (секунды)
-        self.model = SentenceTransformer(meta["model"])
+        self.model = SentenceTransformer('./models/embedding/multilingual-e5-large')
 
     def search(self, query: str, k: int = 3, min_score: float = MIN_SCORE):
         """Топ-k чанков по смыслу. Чанки ниже min_score отбрасываются."""
